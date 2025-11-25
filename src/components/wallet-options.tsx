@@ -22,7 +22,7 @@ function WalletOption({
 
   return (
     <button
-      className="w-fit rounded bg-[peru] p-2"
+      className="w-fit rounded-sm bg-[peru] p-2"
       disabled={!ready}
       onClick={onClick}
     >

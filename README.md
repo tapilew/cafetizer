@@ -14,7 +14,7 @@ Tokenize your coffee with AI! ✨
 - [x] Add authentication (w/ **Clerk**)
 - [x] rebrand to cafetizer
 - [x] upgrade to next 16
-- [ ] upgrade to tailwind 4
+- [x] upgrade to tailwind 4
 - [ ] deploy again
 - [ ] Add _coffee_ upload (& admin panel)
 - [ ] "taint" (server-only)
