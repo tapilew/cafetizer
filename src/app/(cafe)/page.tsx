@@ -1,24 +1,25 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Image from "next/image";
 import { db } from "~/server/db";
+import type { coffees } from "~/server/db/schema";
+import type { InferSelectModel } from "drizzle-orm";
+
+type Coffee = InferSelectModel<typeof coffees>;
 
 async function Coffees() {
+  let coffees: Coffee[] = [];
+  let error: Error | null = null;
+
   try {
-    const coffees = await db.query.coffees.findMany({
+    coffees = await db.query.coffees.findMany({
       orderBy: (model, { desc }) => desc(model.id),
     });
+  } catch (err) {
+    console.error("Error fetching coffees:", err);
+    error = err as Error;
+  }
 
-    return (
-      <div className="flex flex-wrap gap-4">
-        {coffees.map((coffee) => (
-          <div key={coffee.id} className="flex w-48 flex-col items-center">
-            <img src={coffee.imageUrl} alt="food" />
-            <div>{coffee.name}</div>
-          </div>
-        ))}
-      </div>
-    );
-  } catch (error) {
-    console.error("Error fetching coffees:", error);
+  if (error) {
     return (
       <div className="text-center text-red-500">
         <p>Error loading coffees. Please try again later.</p>
@@ -28,6 +29,17 @@ async function Coffees() {
       </div>
     );
   }
+
+  return (
+    <div className="flex flex-wrap gap-4">
+      {coffees.map((coffee) => (
+        <div key={coffee.id} className="flex w-48 flex-col items-center">
+          <Image src={coffee.imageUrl} alt="food" width={192} height={192} />
+          <div>{coffee.name}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default async function HomePage() {

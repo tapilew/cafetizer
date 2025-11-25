@@ -10,7 +10,10 @@ export function Account() {
 
   return (
     <div>
-      {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
+      {ensAvatar && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img alt="ENS Avatar" src={ensAvatar} />
+      )}
       {address && <div>{ensName ? `${ensName} (${address})` : address}</div>}
       <button onClick={() => disconnect()}>Disconnect</button>
     </div>

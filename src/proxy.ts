@@ -1,6 +1,5 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default clerkMiddleware(); // TODO: watch out for this linter error cause
 
 export const config = {
@@ -11,3 +10,4 @@ export const config = {
         "/(api|trpc)(.*)",
     ],
 };
+
