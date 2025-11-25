@@ -40,3 +40,4 @@ Tokenize your coffee with AI! ✨
   - [ ] C2PA support for content provenance & authenticity
 - [ ] Test Web3 features with **Wagmi**
 - [ ] create base smart contracts
+- [ ] use arkiv.network for NFT metadata
