@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AI Café",
-  description: "AI-Agent-Powered coffee Recommendations!",
+  title: "Cafetizer",
+  description: "Tokenize your coffee with AI!",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

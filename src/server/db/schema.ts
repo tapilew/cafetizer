@@ -16,7 +16,7 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const createTable = pgTableCreator((name) => `ai-cafe_${name}`);
+export const createTable = pgTableCreator((name) => `cafetizer_${name}`);
 
 export const coffees = createTable(
   "coffee",

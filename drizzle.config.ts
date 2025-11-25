@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     url: env.POSTGRES_URL,
   },
-  tablesFilter: ["ai-cafe_*"],
+  tablesFilter: ["cafetizer_*"],
 } satisfies Config;
