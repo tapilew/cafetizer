@@ -1,6 +1,5 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
-
 import { sql } from "drizzle-orm";
 import {
   index,
@@ -27,11 +26,7 @@ export const coffees = createTable(
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
-    updatedAt: timestamp("updated_at").$onUpdate(
-      () => new Date(),
-    ),
+    updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
   },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  }),
+  (table) => [index("name_idx").on(table.name)],
 );

@@ -41,3 +41,4 @@ Tokenize your coffee with AI! ✨
 - [ ] Test Web3 features with **Wagmi**
 - [ ] create base smart contracts
 - [ ] use arkiv.network for NFT metadata
+- [ ] use refine.dev?
